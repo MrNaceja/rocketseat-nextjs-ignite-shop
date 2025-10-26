@@ -6,10 +6,12 @@
 }
 
 @theme inline {
+  --color-*: initial;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-brand-primary: #00875f;
   --color-brand-light: #00b37e;
+  --color-brand-secondary: #7465D4;
   --color-elements: #202024;
   --color-text: #c4c4cc;
   --color-title: #e1e1e6;
@@ -27,4 +29,22 @@
 
 body {
   @apply bg-background text-foreground antialiased font-sans;
+}
+
+@utility container {
+    @apply ml-auto;
+    @variant lg {
+        @apply w-[calc(100vw-((100vw-1400px)/2))]
+    }
+}
+
+
+::-webkit-scrollbar {
+    @apply size-5;
+}
+::-webkit-scrollbar-track {
+    @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+    @apply bg-foreground/15 border-[6px] border-background rounded-2xl hover:bg-foreground/25;
 }
