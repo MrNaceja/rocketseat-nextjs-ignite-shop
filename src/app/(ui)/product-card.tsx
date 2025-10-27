@@ -5,7 +5,7 @@ type ProductCard = {
 }
 export function ProductCard({ preview }: ProductCard) {
   return (
-    <div className="group shrink-0 overflow-hidden rounded-lg p-1 bg-linear-to-b from-brand-primary to-brand-secondary aspect-square size-[656px] flex flex-col gap-3 items-center">
+    <div className="*:select-none group shrink-0 overflow-hidden rounded-lg p-1 bg-linear-to-b from-brand-primary to-brand-secondary aspect-square size-[656px] flex flex-col gap-3 items-center">
       <Image
         src={preview}
         alt=""

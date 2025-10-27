@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${roboto.variable}`}>
+      <body className={`${roboto.variable} overflow-hidden`}>
         <Header />
         {children}
       </body>
