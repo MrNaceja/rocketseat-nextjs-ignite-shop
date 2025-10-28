@@ -1,6 +1,7 @@
 "use client"
 
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import Link from "next/link"
 import { Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { ProductCard } from "@/app/(ui)/product-card"
@@ -25,7 +26,9 @@ export function ProductsCarousel({ products }: ProductsCarouselProps) {
             >
                 {products.map((product) => (
                     <SwiperSlide key={product.id}>
-                        <ProductCard product={product} />
+                        <Link href={`/product/${product.id}`}>
+                            <ProductCard product={product} />
+                        </Link>
                     </SwiperSlide>
                 ))}
             </Swiper>
