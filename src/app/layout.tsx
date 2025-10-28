@@ -6,26 +6,26 @@ import { Roboto } from "next/font/google"
 import { Header } from "@/app/(ui)/header"
 
 const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
+    variable: "--font-roboto",
+    subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
-  title: "Ignite Shop",
-  description: "Ignite Shop Next",
+    title: "Ignite Shop",
+    description: "Ignite Shop Next",
 }
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode
+    children: React.ReactNode
 }>) {
-  return (
-    <html lang="pt-BR">
-      <body className={`${roboto.variable} overflow-hidden`}>
-        <Header />
-        {children}
-      </body>
-    </html>
-  )
+    return (
+        <html lang="pt-BR">
+            <body className={`${roboto.variable} overflow-hidden`}>
+                <Header />
+                {children}
+            </body>
+        </html>
+    )
 }
