@@ -26,7 +26,10 @@ export function ProductsCarousel({ products }: ProductsCarouselProps) {
             >
                 {products.map((product) => (
                     <SwiperSlide key={product.id}>
-                        <Link href={`/product/${product.id}`}>
+                        <Link
+                            href={`/product/${product.id}`}
+                            prefetch={false}
+                        >
                             <ProductCard product={product} />
                         </Link>
                     </SwiperSlide>
