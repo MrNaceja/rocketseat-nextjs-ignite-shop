@@ -25,7 +25,7 @@ export function ProductPreview({
                 alt={description}
                 width={400}
                 height={400}
-                className="flex-1 object-contain size-64 2xl:size-full"
+                className="flex-1 object-contain size-64 2xl:size-96"
             />
             {children}
         </div>
