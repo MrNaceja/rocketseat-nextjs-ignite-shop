@@ -16,7 +16,7 @@ export function ProductPreview({
     return (
         <div
             className={cn(
-                "*:select-none shrink-0 overflow-hidden rounded-lg p-1 bg-linear-to-b from-brand-primary to-brand-secondary aspect-square size-[456px] 2xl:size-[656px] grid place-items-center",
+                "*:select-none shrink-0 overflow-hidden rounded-lg p-3 bg-linear-to-b from-brand-primary to-brand-secondary aspect-square size-[456px] 2xl:size-[656px] grid place-items-center",
                 className,
             )}
         >
@@ -25,7 +25,7 @@ export function ProductPreview({
                 alt={description}
                 width={400}
                 height={400}
-                className="flex-1 object-contain size-64 2xl:size-96"
+                className="object-contain size-full"
             />
             {children}
         </div>
