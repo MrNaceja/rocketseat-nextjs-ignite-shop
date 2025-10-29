@@ -7,6 +7,7 @@ export function Header() {
             <Link
                 href="/"
                 prefetch={false}
+                className="flex w-fit"
             >
                 <Image
                     src="/logo.svg"
