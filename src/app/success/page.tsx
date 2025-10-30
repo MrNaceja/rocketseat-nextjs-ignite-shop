@@ -1,5 +1,7 @@
 import { ArrowLeft } from "lucide-react"
+import type { Metadata } from "next"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 import type Stripe from "stripe"
 import { Button } from "@/components/button"
 import { ProductPreview } from "@/components/product-preview"
@@ -35,11 +37,21 @@ async function getOrderDetails(
     }
 }
 
+export const metadata: Metadata = {
+    title: "Compra efetuada",
+    robots: { index: false },
+}
+
 type SuccessPageProps = PageProps<"/success"> & {
     searchParams: Promise<{ checkout_session_id: string }>
 }
 export default async function SuccessPage({ searchParams }: SuccessPageProps) {
     const { checkout_session_id: checkoutSessionId } = await searchParams
+
+    if (!checkoutSessionId) {
+        return redirect("/")
+    }
+
     const order = await getOrderDetails(checkoutSessionId)
 
     return (

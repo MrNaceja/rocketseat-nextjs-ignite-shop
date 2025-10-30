@@ -11,7 +11,11 @@ const roboto = Roboto({
 })
 
 export const metadata: Metadata = {
-    title: "Ignite Shop",
+    title: {
+        template: "%s | Ignite Shop",
+        default: "Ignite Shop",
+        absolute: "Ignite Shop",
+    },
     description: "Ignite Shop Next",
 }
 

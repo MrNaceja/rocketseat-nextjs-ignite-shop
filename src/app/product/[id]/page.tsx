@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import type Stripe from "stripe"
 import { ProductPageUI } from "@/app/product/[id]/ui"
 import { stripe } from "@/config/stripe"
@@ -23,6 +24,16 @@ async function getProduct(id: string): Promise<Product & { priceId: string }> {
         preview: product.images[0],
         price: (price.unit_amount ?? 0) / 100,
         priceId: price.id,
+    }
+}
+
+export async function generateMetadata({
+    params,
+}: ProductPageProps): Promise<Metadata> {
+    const { id } = await params
+    const { name } = await getProduct(id)
+    return {
+        title: name,
     }
 }
 
